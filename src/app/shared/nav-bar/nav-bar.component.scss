@@ -1,0 +1,15 @@
+img {
+    height: 65px;
+    width: auto;
+    margin: 0 10px;
+}
+
+a {
+    cursor: pointer;
+}
+
+li>a:hover {
+    background-color: #00833263;
+    border-radius: 10%;
+    transform: translate(0px, -5%);
+}

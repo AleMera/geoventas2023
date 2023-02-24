@@ -1,0 +1,167 @@
+<div class="modal-header">
+  <h2 class="modal-title">
+    {{ idUsuario ? "Editar Información" : "Registrar Usuario" }}
+  </h2>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modal.dismissAll('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="text-center">
+    <div
+      class="spinner-border"
+      style="width: 3rem; height: 3rem"
+      role="status"
+      *ngIf="cargandoInicio"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <form autocomplete="off" [formGroup]="usuarioForm" (ngSubmit)="guardar()">
+    <!-- Cedula -->
+    <span class="text-danger" *ngIf="validarCampos('cedula')">
+      {{ errorCedula }}
+    </span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          >Cedula</span
+        >
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        id="cedula"
+        formControlName="cedula"
+      />
+    </div>
+
+    <!-- Nombre -->
+    <span class="text-danger" *ngIf="validarCampos('nombre')">
+      {{ errorNombre }}
+    </span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          >Nombre</span
+        >
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        formControlName="nombre"
+      />
+    </div>
+
+    <!-- Apellido -->
+    <span class="text-danger" *ngIf="validarCampos('apellido')">
+      {{ errorApellido }}
+    </span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          >Apellido</span
+        >
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="apellido"
+        formControlName="apellido"
+      />
+    </div>
+
+    <!-- Email -->
+    <span class="text-danger" *ngIf="validarCampos('email')">
+      {{ errorEmail }}
+    </span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          >Email</span
+        >
+      </div>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+      />
+    </div>
+
+    <!-- Telefono -->
+    <span class="text-danger" *ngIf="validarCampos('telefono')">
+      {{ errorTelf }}
+    </span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          >Telefono</span
+        >
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        id="telefono"
+        formControlName="telefono"
+      />
+    </div>
+
+    <!-- Ciudades -->
+    <span class="text-danger" *ngIf="validarCampos('ciudad')">
+      {{ errorCiudad }}
+    </span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Ciudades</label>
+      </div>
+      <select class="form-control custom-select" formControlName="ciudad" (change)="agregarCiudad($event)">
+        <option value="">Seleccionar...</option>
+        <option *ngFor="let ciudad of ciudades">
+          {{ ciudad.nombre }}
+        </option>
+      </select>
+    </div>
+    <div class="input-group mb-3" *ngFor="let ciudad of ciudadesSelect; let i=index">
+      <input type="text" class="form-control" [value]="ciudad.nombre" readonly>
+      <div class="input-group-append">
+        <button class="btn btn-outline-danger" type="button" (click)="quitarCiudad(i)">
+          <i class="material-icons">cancel</i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div [class]="editar ? 'modal-footer justify-content-between' : 'modal-footer justify-content-center'">
+  <button type="button" class="btn btn-danger text-left" (click)="eliminar()" *ngIf="editar">
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+      *ngIf="cargandoEliminar"
+    >
+    </span>
+    <i class="material-icons" *ngIf="!cargandoEliminar"> delete </i>
+  </button>
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="guardar()"
+    [disabled]="(cargandoGuardar || !usuarioForm.dirty) && editar"
+  >
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+      *ngIf="cargandoGuardar"
+    ></span>
+    {{ cargandoGuardar ? "Guardando..." : "Guardar" }}
+  </button>
+</div>

@@ -1,0 +1,13 @@
+<div class="card h-100" (click)="irAlCurso()">
+  <img [src]="curso.imgsUrl.length != 0 ? curso.imgsUrl[0] : 'assets/img/cursos/1.jpg'" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ curso.nombre }}</h5>
+    <p class="card-text">{{ curso.certif }}</p>
+  </div>
+
+  <div class="card-footer">
+    <small class="text-muted">Precio: {{ curso.precio | currency }}</small>
+    <br>
+    <small class="text-muted">Duración: {{ curso.duracion }}H </small>
+  </div>
+</div>

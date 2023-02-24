@@ -1,0 +1,176 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="assets/img/logo-corfopym.png" id="icon" alt="LogoCorfo" />
+    </div>
+    <h2>
+      Registro de credenciales
+      <i class="material-icons" style="cursor: pointer" (click)="ayuda()"
+        >help</i
+      >
+    </h2>
+    <br />
+    <form [formGroup]="registroForm">
+      <!-- CORREO -->
+      <span class="text-danger" *ngIf="validarCampos('correo')">
+        {{ errorCorreo }}
+      </span>
+      <div class="correoInput">
+        <input
+          type="text"
+          id="login"
+          class="fadeIn second"
+          name="login"
+          placeholder="Correo electrónico"
+          formControlName="correo"
+          style="width: 80%"
+          (keydown)="onKeydown($event)"
+        />
+        <button
+          type="button"
+          class="btn btn-light fadeIn first"
+          (click)="buscarCorreo()"
+        >
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+            *ngIf="cargandoBuscar"
+          >
+          </span>
+          <i class="material-icons" *ngIf="!cargandoBuscar">search</i>
+        </button>
+      </div>
+      <br />
+      <div *ngIf="encontrado">
+        <ngb-alert #autoclose type="success"  style="margin: 0% 8%; width: 84%;" (closed)="alert = false" *ngIf="alert">
+          <strong>Se encontró un usuario con el correo ingresado.</strong>
+        </ngb-alert>
+        <!-- PASSWD -->
+        <span class="text-danger" *ngIf="validarCampos('passwd')">
+          {{ errorPasswd }}
+        </span>
+        <input
+          passwd
+          [type]="[visible ? 'text' : 'password']"
+          id="password"
+          name="login"
+          placeholder="Contraseña"
+          formControlName="passwd"
+        />
+        <br />
+
+        <!-- PASSWD2 -->
+        <span class="text-danger" *ngIf="validarCampos('passwd2')">
+          {{ errorPasswd2 }}
+        </span>
+        <input
+          passwd
+          type="password"
+          id="password2"
+          name="login"
+          placeholder="Confirmar Contraseña"
+          formControlName="passwd2"
+        />
+        <br />
+        <button type="submit" class="btn btn-success" (click)="guardar()">
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+            *ngIf="cargandoGuardar"
+          ></span>
+          {{ !cargandoGuardar ? "Confirmar Registro" : "" }}
+        </button>
+      </div>
+      <hr />
+      <h2>Información del usuario</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- CEDULA -->
+            <input
+              type="text"
+              id="login"
+              class="fadeIn second"
+              name="login"
+              placeholder="Cédula"
+              formControlName="cedula"
+            />
+          </div>
+        </div>
+        <div class="row row-cols-2">
+          <div class="col">
+            <!-- NOMBRE -->
+            <div class="d-flex justify-content-end">
+              <input
+                type="text"
+                id="login"
+                class="fadeIn second"
+                name="login"
+                placeholder="Nombre"
+                formControlName="nombre"
+                style="width: 82%"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <!-- APELLIDO -->
+            <div class="d-flex justify-content-start">
+              <input
+                type="text"
+                id="login"
+                class="fadeIn second"
+                name="login"
+                placeholder="Apellido"
+                formControlName="apellido"
+                style="width: 82%"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <!-- TELEFONO -->
+            <div class="d-flex justify-content-end">
+              <input
+                type="text"
+                id="login"
+                class="fadeIn second"
+                name="login"
+                placeholder="Teléfono"
+                formControlName="telefono"
+                style="width: 82%"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <!-- CIUDAD -->
+            <div class="d-flex justify-content-start">
+              <input
+                type="text"
+                id="login"
+                class="fadeIn second"
+                name="login"
+                placeholder="Ciudad"
+                formControlName="ciudad"
+                style="width: 82%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </form>
+    <div id="formFooter">
+      <a class="underlineHover" href="/auth/login">
+        <i class="material-icons">arrow_back</i>
+        Volver al login
+      </a>
+      <br />
+    </div>
+  </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#005722" fill-opacity="1"
+        d="M0,32L60,64C120,96,240,160,360,154.7C480,149,600,75,720,80C840,85,960,171,1080,181.3C1200,192,1320,128,1380,96L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+    </path>
+</svg>

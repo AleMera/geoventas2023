@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <!-- <div class="d-flex justify-content-between"> -->
+    <div class="d-flex align-items-center">
+      <div class="d-flex">
+        <label class="label-filtros" for="inputGroupSelect01">
+          <strong>Ciudad:</strong>
+        </label>
+        <select
+          #ciudad
+          class="custom-select"
+          id="inputGroupSelect01"
+          (change)="cambiarCiudad($event)"
+        >
+          <option value="" selected>Mostrar todo</option>
+          <option [value]="ciudad.id" *ngFor="let ciudad of ciudades">
+            {{ ciudad.nombre }}
+          </option>
+        </select>
+      </div>
+      <div class="d-flex" style="margin-left: 2%;">
+        <div class="btn-group btn-group-sm" role="group" [formGroup]="filtroPagos">
+          <input type="radio" class="btn-check" id="btnradio1" autocomplete="off" value="" formControlName="estado" (click)="changeRadio($event)">
+          <label class="btn btn-outline-primary" for="btnradio1">Todos</label>
+
+          <input type="radio" class="btn-check" id="btnradio2" autocomplete="off" value="pagado" formControlName="estado" (click)="changeRadio($event)">
+          <label class="btn btn-outline-success" for="btnradio2">Pagados</label>
+        
+          <input type="radio" class="btn-check" id="btnradio3" autocomplete="off" value="pendiente" formControlName="estado" (click)="changeRadio($event)">
+          <label class="btn btn-outline-danger" for="btnradio3">Pendientes</label>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+  <table
+    datatable
+    class="row-border hover"
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+  >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Ciudad</th>
+        <th>Curso</th>
+        <th>Estado</th>
+        <th>Información</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let cliente of clientesVenta; index as i"> -->
+      <tr *ngFor="let cliente of auxClientesVenta; index as i">
+        <th>{{ i + 1 }}</th>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.apellido }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td>{{ cliente.ciudad }}</td>
+        <td>{{ cliente.curso }}</td>
+        <td>{{ cliente.pagoVenta ? 'Pagado' : 'Pendiente' }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="verInfo(cliente.id, cliente.idVenta)"
+          >
+            Ver mas...
+          </button>
+          <span
+            class="text-center text-warning"
+            *ngIf="camposFaltantes(cliente)"
+            title="Este registro contiene campos faltantes"
+          >
+            <i class="material-icons">warning</i>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <button type="button" class="btn btn-custom" (click)="nuevo()">Nuevo</button>
+  <table
+    datatable
+    class="row-border hover"
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+  >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Cédula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Información</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios; index as i">
+        <th>{{ i + 1 }}</th>
+        <td>{{ usuario.cedula }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellido }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.telefono }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="verInfo(usuario.id)"
+          >
+            Ver mas...
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

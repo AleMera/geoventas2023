@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="col-4">
+            <label class="text-left" for="inputGroupSelect01">
+              <strong>Ciudad:</strong>
+            </label>
+          </div>
+          <div class="col">
+            <select #ciudad class="custom-select" id="inputGroupSelect01" (change)="cambiarCiudad($event)">
+              <option value="" selected>Mostrar todo</option>
+              <option [value]="ciudad.id" *ngFor="let ciudad of ciudades">
+                {{ ciudad.nombre }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex align-items-center" style="margin-top: 1%; margin-left: 2%;">
+          <div class="btn-group btn-group-sm" role="group" [formGroup]="filtroPagos">
+            <input type="radio" class="btn-check" id="btnradio1" autocomplete="off" value="" formControlName="estado" (click)="changeRadio($event)">
+            <label class="btn btn-outline-primary" for="btnradio1">Todos</label>
+            <input type="radio" class="btn-check" id="btnradio2" autocomplete="off" value="pagado" formControlName="estado" (click)="changeRadio($event)">
+            <label class="btn btn-outline-success" for="btnradio2">Pagados</label>
+            <input type="radio" class="btn-check" id="btnradio3" autocomplete="off" value="pendiente" formControlName="estado" (click)="changeRadio($event)">
+            <label class="btn btn-outline-danger" for="btnradio3">Pendientes</label>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center" *ngIf="total">
+        <div class="card">
+          <div class="card-header">
+            <strong>Total: {{ total | currency }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-flex justify-content-left">
+      <div class="d-flex align-items-center">
+        <div class="col-4">
+          <label class="text-left" for="inputGroupSelect02">
+            <strong>Vendedor:</strong>
+          </label>
+        </div>
+        <div class="col vendedores">
+          <select #selectVendedor class="custom-select" id="inputGroupSelect02" (change)="cambiarVendedor($event)">
+            <option value="" selected>Seleccionar...</option>
+            <option [value]="vendedor.id" *ngFor="let vendedor of vendedores">
+              {{ vendedor.nombre }} {{ vendedor.apellido }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="d-flex align-items-center" style="margin-top: -1%;">
+        <div class="card comision" *ngIf="comisionVendedor >= 0 && !editarComision && selectVendedor.value" (click)="editarComision = !editarComision">
+          <div class="card-header">
+            <strong>Comisión: {{ comisionVendedor | currency }}</strong>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <div [formGroup]="ventaForm">
+          <div class="input-group input-group-sm mb-3" *ngIf="editarComision">
+            <input type="number" class="form-control" formControlName="comision" placeholder="Nueva comisión">
+            <button type="button"
+              [class]="ventaForm.controls['comision'].dirty ? 'btn btn-outline-success' : 'btn btn-outline-danger'" (click)="guardarComision()">
+              {{ ventaForm.controls['comision'].dirty ? '✔' : '✘' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Cliente</th>
+          <th>Curso</th>
+          <th>Ciudad</th>
+          <th>Vendedor</th>
+          <th>Fecha</th>
+          <th>Precio</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let venta of auxVentas; index as i">
+          <th>{{ i + 1 }}</th>
+          <td>{{ venta.cliente }}</td>
+          <td>{{ venta.curso }}</td>
+          <td>{{ venta.ciudad }}</td>
+          <td>{{ venta.vendedor }}</td>
+          <td>{{ venta.fecha | date }}</td>
+          <td>{{ venta.precio | currency }}</td>
+          <td>{{ venta.pagado ? 'Pagado' : 'Pendiente' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

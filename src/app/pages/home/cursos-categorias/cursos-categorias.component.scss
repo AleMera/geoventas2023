@@ -1,0 +1,98 @@
+.info-cursos {
+  padding-bottom: 5%;
+}
+
+.imagen-infoCursos {
+  background-image: linear-gradient(180deg, rgba(46, 50, 60, 0.5), rgba(46, 50, 60, 0.5)),
+    url('../../../../assets/img/inicio/infoCursos.jpg');
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  margin-top: 2%;
+}
+
+.titulo-infoCursos {
+  color: var(--bs-gray-500);
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-top: 2%;
+  text-shadow: 2px 1px 1px rgb(49 49 49 / 83%);
+}
+
+p {
+  text-align: justify;
+}
+
+.container {
+  margin: 5%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h3 {
+  color: #1a59ac;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgb(6 15 29);
+  font-weight: 600;
+}
+
+i:hover {
+  color: #198754bf;
+  transition: 0.5s;
+  font-size: 5.5rem;
+}
+
+i {
+  margin: 5%;
+  font-size: 5rem;
+}
+
+.cards {
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-group {
+  margin: 2%;
+  padding: 20px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.text-center,
+.text-left,
+.text-right {
+  padding: 2%;
+}
+
+.card-img-top {
+  border-radius: 5%;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.col {
+  padding-bottom: 2%;
+}
+
+.btnCargar {
+  margin-top: 0%;
+}
+
+.list-group-item {
+  margin-bottom: 10px;
+}

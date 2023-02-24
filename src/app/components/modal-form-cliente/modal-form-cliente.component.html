@@ -1,0 +1,401 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    {{ idCliente ? "Editar Información" : "Inscribirse al curso" }}
+  </h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modal.dismissAll('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="text-center">
+    <div
+      class="spinner-border"
+      style="width: 3rem; height: 3rem"
+      role="status"
+      *ngIf="cargando && idCliente"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="curso">
+    <strong>{{ curso.nombre }}</strong>
+  </div>
+
+  <form autocomplete="off" [formGroup]="clienteForm" (ngSubmit)="guardar()">
+    <!-- PRIMERA PAGINA -->
+    <div *ngIf="numPagina === 1">
+      <h5 class="text-center" *ngIf="editar">Información básica</h5>
+      <hr />
+      <!-- Cedula -->
+      <span class="text-danger" *ngIf="validarCampos('cedula')">
+        {{ errorCedula }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Cédula</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="cedula"
+          onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+          (change)="verificarCedula($event)"
+          formControlName="cedula"
+        />
+      </div>
+      <!-- Nombre -->
+      <span class="text-danger" *ngIf="validarCampos('nombre')">
+        {{ errorNombre }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Nombre</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          formControlName="nombre"
+        />
+      </div>
+      <!-- Apellido -->
+      <span class="text-danger" *ngIf="validarCampos('apellido')">
+        {{ errorApellido }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Apellido</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          formControlName="apellido"
+        />
+      </div>
+      <!-- Email -->
+      <span class="text-danger" *ngIf="validarCampos('email')">
+        {{ errorEmail }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Email</span
+          >
+        </div>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+      </div>
+      <!-- Teléfono -->
+      <span class="text-danger" *ngIf="validarCampos('telefono')">
+        {{ errorTelefono }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Telefono</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+          formControlName="telefono"
+        />
+      </div>
+      <!-- Ciudad -->
+      <span class="text-danger" *ngIf="validarCampos('ciudad')">
+        {{ errorCiudad }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01"
+            >Ciudad de residencia</label
+          >
+        </div>
+        <select class="form-control custom-select" formControlName="ciudad">
+          <option value="">Seleccionar...</option>
+          <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">
+            {{ ciudad.nombre }}
+          </option>
+        </select>
+      </div>
+      <!-- Dirección -->
+      <span class="text-danger" *ngIf="validarCampos('direccion')">
+        {{ errorDireccion }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Dirección</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="direccion"
+          formControlName="direccion"
+        />
+      </div>
+    </div>
+
+    <!-- SEGUNDA PAGINA -->
+    <div *ngIf="numPagina === 2">
+      <h5 class="text-center">Información adicional</h5>
+      <hr />
+      <!-- Imagen cedula -->
+      <span class="text-danger" *ngIf="validarCampos('imgCedula')">
+        {{ errorImgCedula }}
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Cédula física</span
+          >
+        </div>
+        <input
+          type="file"
+          accept="application/pdf"
+          max="1"
+          class="form-control"
+          id="imgCedula"
+          formControlName="imgCedula"
+          (change)="cargarArchivo($event, 'cedula')"
+        />
+      </div>
+      <div class="container-fluid" style="margin-bottom: 2%" *ngIf="urlCedula">
+        <div class="row">
+          <div class="col-4">
+            <a
+              class="btn btn-dark btn-sm"
+              [href]="urlCedula"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver archivo</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificado de trabajo -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Cert. trabajo</span
+          >
+        </div>
+        <input
+          type="file"
+          accept="application/pdf"
+          max="1"
+          class="form-control"
+          id="certTrabajo"
+          formControlName="certTrabajo"
+          (change)="cargarArchivo($event, 'certTrabajo')"
+        />
+      </div>
+      <div
+        class="container-fluid"
+        style="margin-bottom: 2%"
+        *ngIf="urlCertTrabajo"
+      >
+        <div class="row">
+          <div class="col-4">
+            <a
+              class="btn btn-dark btn-sm"
+              [href]="urlCertTrabajo"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver archivo</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificado de capacitacion -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Cert. capacitación</span
+          >
+        </div>
+        <input
+          type="file"
+          accept="application/pdf"
+          max="1"
+          class="form-control"
+          id="certCapacitacion"
+          formControlName="certCapacitacion"
+          (change)="cargarArchivo($event, 'certCapacitacion')"
+        />
+      </div>
+      <div
+        class="container-fluid"
+        style="margin-bottom: 2%"
+        *ngIf="urlCertCapacitacion"
+      >
+        <div class="row">
+          <div class="col-4">
+            <a
+              class="btn btn-dark btn-sm"
+              [href]="urlCertCapacitacion"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver archivo</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TERCERA PAGINA -->
+    <div *ngIf="numPagina === 3">
+      <h5 class="text-center">Información de la compra</h5>
+      <hr />
+
+      <!-- Curso -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Curso adquirido</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="curso"
+          formControlName="curso"
+        />
+      </div>
+
+      <!-- Fecha del curso -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Fecha del curso</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="fechaCurso"
+          formControlName="fechaCurso"
+        />
+      </div>
+
+      <!-- Fecha de compra -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Fecha de compra</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="fechaCompra"
+          formControlName="fechaCompra"
+        />
+      </div>
+
+      <!-- Precio -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Precio ($)</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="precio"
+          formControlName="precio"
+        />
+      </div>
+
+      <!-- Estado de paga -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Estado de pago</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="estadoPago"
+          formControlName="estadoPago"
+          [style]="clienteForm.controls['estadoPago'].value === 'Pagado' ? 'background-color: #56f46d' : 'background-color: #f45656'"
+        />
+      </div>
+
+      <div class="d-flex justify-content-center" *ngIf="clienteForm.controls['estadoPago'].value === 'Pendiente'">
+        <button type="button" class="btn btn-info btn-sm" (click)="marcarCursoPagado()">Marcar como pagado</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="idVenta">
+  <ngb-pagination [collectionSize]="30" [(page)]="numPagina"> </ngb-pagination>
+</div>
+
+<div
+  [class]="
+    !curso
+      ? 'modal-footer justify-content-between'
+      : 'modal-footer justify-content-center'
+  "
+>
+  <button
+    type="button"
+    class="btn btn-danger text-left"
+    (click)="eliminar()"
+    *ngIf="idCliente"
+  >
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+      *ngIf="cargando"
+    >
+    </span>
+    <i class="material-icons">delete</i>
+  </button>
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="guardar()"
+    [disabled]="cargando || (!clienteForm.dirty && !curso)"
+  >
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+      *ngIf="cargando"
+    ></span>
+    {{
+      cargando && !idCurso
+        ? "Guardando..."
+        : cargando && idCurso
+        ? ""
+        : !cargando && !idCurso
+        ? "Guardar"
+        : "Finalizar"
+    }}
+  </button>
+</div>

@@ -1,0 +1,38 @@
+.cargando {
+  position: absolute;
+  top: 0;
+  margin-top: 1%;
+  width: 98%;
+  height: 590px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  opacity: 50%;
+}
+
+.cargando > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.card {
+  width: auto;
+  padding: 0;
+}
+
+.card-header {
+  margin-top: 0;
+}
+
+.justify-content-between {
+  margin-top: 10px;
+}
+
+.chart {
+  width: 550px;
+}
+
+.chart>div {
+  position: absolute;
+  left: 25%;
+}

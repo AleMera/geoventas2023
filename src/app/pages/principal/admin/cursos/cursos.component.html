@@ -1,0 +1,40 @@
+<div class="conatiner-fluid">
+  <button type="button" class="btn btn-custom" (click)="nuevo()">
+    Nuevo
+  </button>
+  <table
+    datatable
+    class="row-border hover"
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+  >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Modalidad</th>
+        <th>Horario</th>
+        <th>Información</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let curso of cursos; index as i">
+        <th>{{ i + 1 }}</th>
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.precio | currency }}</td>
+        <td>{{ curso.modalidad }}</td>
+        <td>{{ curso.horario }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="verInfo(curso.id)"
+          >
+            Ver mas...
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

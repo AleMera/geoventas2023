@@ -1,0 +1,74 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="assets/img/logo-corfopym.png" id="icon" alt="LogoCorfo" />
+    </div>
+
+    <form [formGroup]="loginForm">
+      <span class="text-danger" *ngIf="validarCampos('correo')">
+        {{ errorCorreo }}
+      </span>
+      <input
+        type="text"
+        id="correo"
+        class="fadeIn second"
+        name="login"
+        placeholder="Correo"
+        formControlName="correo"
+      />
+      <br />
+      <span class="text-danger" *ngIf="validarCampos('passwd')">
+        {{ errorPasswd }}
+      </span>
+      <input
+        passwd
+        type="password"
+        id="password"
+        class="fadeIn third"
+        name="login"
+        placeholder="Contraseña"
+        formControlName="passwd"
+      />
+      <br />
+      <ngb-alert
+        type="danger"
+        *ngIf="passwdIncorrecta"
+        (closed)="passwdIncorrecta = false"
+      >
+        <div class="alert-text">
+          <span>Contraseña incorrecta</span>
+        </div>
+      </ngb-alert>
+      <button
+        type="button"
+        class="fadeIn fourth btn btn-success"
+        (click)="login()"
+        [disabled]="cargando"
+      >
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+          *ngIf="cargando"
+        ></span>
+        {{ !cargando ? "Iniciar sesión" : "" }}
+      </button>
+      <!-- <button type="submit" class="fadeIn fourth btn btn-success">Iniciar Sesión</button> -->
+    </form>
+    <a href="inicio" class="underlineHover"> Recuperar contraseña </a>
+    <br />
+
+    <div id="formFooter">
+      <a class="underlineHover" href="inicio">
+        <i class="material-icons">arrow_back</i>
+        Volver al inicio
+      </a>
+      <br />
+    </div>
+  </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#005722" fill-opacity="1"
+        d="M0,32L60,64C120,96,240,160,360,154.7C480,149,600,75,720,80C840,85,960,171,1080,181.3C1200,192,1320,128,1380,96L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+    </path>
+</svg>

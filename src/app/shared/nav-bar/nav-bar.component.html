@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+    <a class="navbar-brand" href="/inicio">
+      <img
+        src="/assets/img/logo-corfopym.png"
+        alt="logo"
+        width="30"
+        height="24"
+      />
+    </a>
+		<button
+			class="navbar-toggler"
+			type="button"
+			aria-controls="navbarContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse justify-content-between" collapse="true" id="navbarContent">
+			<ul class="navbar-nav" *ngIf="!logueado">
+        <li class="nav-link" *ngFor="let item of menu">
+          <a class="nav-link page-scroll" routerLinkActive="active" routerLink="/inicio" [fragment]="item.fragment">
+            {{ item.texto }}
+          </a>
+        </li>
+			</ul>
+      <button type="button" class="btn btn-outline-success" (click)="iniciarSesion()" *ngIf="!logueado">
+        <span> Iniciar sesión </span>
+      </button>
+      <div class="card" *ngIf="logueado">
+        <div class="card-header">
+          <span
+            class="text-center text-warning"
+            *ngIf="!usuario.displayName && !esAdmin()"
+            title="Este registro contiene campos faltantes, haga click para ver los detalles y completarlos."
+            [style]="!usuario.displayName ? 'cursor: pointer;' : ''"
+            (click)="editarPerfil()"
+          >
+            <i class="material-icons">warning</i>
+          </span>
+          <strong>{{!esAdmin() ? 'Vendedor:' : 'Administrador'}} {{ !esAdmin() ? usuario.displayName : '' }}</strong>
+        </div>
+      </div>
+      <div ngbDropdown class="d-inline-block" *ngIf="logueado">
+        <button type="button" class="btn btn-secondary" id="dropdown1" ngbDropdownToggle>
+          {{ usuario.email }}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdown1">
+          <button ngbDropdownItem type="button" class="btn btn-light text-danger" (click)="cerrarSesion()">Cerrar sesión</button>
+        </div>
+      </div>
+		</div>
+	</div>
+</nav>

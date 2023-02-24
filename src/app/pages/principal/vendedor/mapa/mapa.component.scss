@@ -1,0 +1,54 @@
+// .map-container {
+//   position: absolute;
+//   top: 15%;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   margin: 30px;
+// }
+
+// .map-frame {
+//   border-radius: 10px;
+//   background-color: #fff;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+//   height: 100%;
+// }
+
+#map {
+  position: fixed;
+  margin-top: 1%;
+  width: 98%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cargando {
+  position: fixed;
+  margin-top: 1%;
+  width: 98%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  opacity: 50%;
+}
+
+.cargando>div {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+.leyenda{
+  position: fixed;
+  top: 21%;
+  right: 2%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 90%;
+  width: 20%;
+  height: 22%;
+  border: 1px solid;
+  border-radius: 4%;
+}

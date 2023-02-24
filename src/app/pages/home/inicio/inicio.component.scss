@@ -1,0 +1,25 @@
+#btnGoUp {
+    position: fixed;
+    z-index: 1000;
+    right: 25px;
+    bottom: 25px;
+    background-color: #1aac68;
+    width: 64px;
+    height: 64px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#btnGoUp:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+i {
+    position: absolute;
+    top: 15%;
+    right: 20%;
+}

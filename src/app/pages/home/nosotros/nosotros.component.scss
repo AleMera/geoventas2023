@@ -1,0 +1,69 @@
+.nosotros { 
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+.imagen-nosotros {
+  background-image: linear-gradient(180deg, rgba(46, 50, 60, 0.5), rgba(46, 50, 60, 0.5)),
+    url('../../../../assets/img/inicio/nosotros.jpg');
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+  margin-top: 2%;
+}
+
+.titulo-nosotros {
+  color: var(--bs-gray-500);
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-top: 2%;
+  text-shadow: 2px 1px 1px rgb(49 49 49 / 83%);
+}
+
+p {
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.img {
+  background-image: linear-gradient(180deg, rgba(46, 50, 60, 0.5), rgba(46, 50, 60, 0.5)),
+    url('../../../../assets/img/inicio/acercaDe.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 325px;
+}
+
+.quienes-somos {
+  color: #1aac68;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgb(6, 29, 11);
+  font-weight: 600;
+}
+
+.mision {
+  color: #1aac68;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgb(6, 29, 11);
+  font-weight: 600;
+}
+
+.vision {
+  color: #1a59ac;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgb(6 15 29);
+  font-weight: 600;
+}

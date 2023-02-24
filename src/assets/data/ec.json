@@ -1,0 +1,562 @@
+[
+  {
+    "pais": "Ecuador", 
+    "nombre": "Guayaquil", 
+    "provincia": "Guayas",
+    "lat": "-2.1833", 
+    "lng": "-79.8833" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Quito", 
+    "provincia": "Pichincha",
+    "lat": "-0.2186", 
+    "lng": "-78.5097" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Cuenca", 
+    "provincia": "Azuay",
+    "lat": "-2.8974", 
+    "lng": "-79.0045" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Santo Domingo", 
+    "provincia": "Santo Domingo de los Tsáchilas",
+    "lat": "-0.2542", 
+    "lng": "-79.1719" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Machala", 
+    "provincia": "El Oro",
+    "lat": "-3.2667", 
+    "lng": "-79.9667" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Eloy Alfaro", 
+    "provincia": "Guayas",
+    "lat": "-2.1733", 
+    "lng": "-79.8311" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Manta", 
+    "provincia": "Manabí",
+    "lat": "-0.9500", 
+    "lng": "-80.7162" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Portoviejo", 
+    "provincia": "Manabí",
+    "lat": "-1.0544", 
+    "lng": "-80.4544" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Loja", 
+    "provincia": "Loja",
+    "lat": "-3.9906", 
+    "lng": "-79.2050" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Ambato", 
+    "provincia": "Tungurahua",
+    "lat": "-1.2417", 
+    "lng": "-78.6197" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Esmeraldas", 
+    "provincia": "Esmeraldas",
+    "lat": "0.9500", 
+    "lng": "-79.6667" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Quevedo", 
+    "provincia": "Los Ríos",
+    "lat": "-1.0333", 
+    "lng": "-79.4500" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Riobamba", 
+    "provincia": "Chimborazo",
+    "lat": "-1.6743", 
+    "lng": "-78.6483" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Milagro", 
+    "provincia": "Guayas",
+    "lat": "-2.1347", 
+    "lng": "-79.5872" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Ibarra", 
+    "provincia": "Imbabura",
+    "lat": "0.3628", 
+    "lng": "-78.1300" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Babahoyo", 
+    "provincia": "Los Ríos",
+    "lat": "-1.8167", 
+    "lng": "-79.5167" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Sangolquí", 
+    "provincia": "Pichincha",
+    "lat": "-0.3344", 
+    "lng": "-78.4475" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Pelileo", 
+    "provincia": "Tungurahua",
+    "lat": "-1.3306", 
+    "lng": "-78.5428" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Daule", 
+    "provincia": "Guayas",
+    "lat": "-1.8667", 
+    "lng": "-79.9833" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Latacunga", 
+    "provincia": "Cotopaxi",
+    "lat": "-0.9333", 
+    "lng": "-78.6167" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Tulcán", 
+    "provincia": "Carchi",
+    "lat": "0.8117", 
+    "lng": "-77.7186" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Chone", 
+    "provincia": "Manabí",
+    "lat": "-0.6833", 
+    "lng": "-80.1000" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Pasaje", 
+    "provincia": "El Oro",
+    "lat": "-3.3269", 
+    "lng": "-79.8049" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Santa Rosa", 
+    "provincia": "El Oro",
+    "lat": "-3.4522", 
+    "lng": "-79.9617" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Nueva Loja", 
+    "provincia": "Sucumbíos",
+    "lat": "0.0844", 
+    "lng": "-76.8911" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Huaquillas", 
+    "provincia": "El Oro",
+    "lat": "-3.4803", 
+    "lng": "-80.2317" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Montecristi", 
+    "provincia": "Manabí",
+    "lat": "-1.0500", 
+    "lng": "-80.6667" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Samborondón", 
+    "provincia": "Guayas",
+    "lat": "-1.9611", 
+    "lng": "-79.7256" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Puerto Francisco de Orellana", 
+    "provincia": "Orellana",
+    "lat": "-0.4625", 
+    "lng": "-76.9842" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Jipijapa", 
+    "provincia": "Manabí",
+    "lat": "-1.3486", 
+    "lng": "-80.5786" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Santa Elena", 
+    "provincia": "Santa Elena",
+    "lat": "-2.2267", 
+    "lng": "-80.8583" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Otavalo", 
+    "provincia": "Imbabura",
+    "lat": "0.2333", 
+    "lng": "-78.2667" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Cayambe", 
+    "provincia": "Pichincha",
+    "lat": "0.0439", 
+    "lng": "-78.1561" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "San Jacinto de Buena Fe", 
+    "provincia": "Los Ríos",
+    "lat": "-0.8932", 
+    "lng": "-79.4907" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Ventanas", 
+    "provincia": "Los Ríos",
+    "lat": "-1.4500", 
+    "lng": "-79.4700" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Velasco Ibarra", 
+    "provincia": "Guayas",
+    "lat": "-1.0439", 
+    "lng": "-79.6383" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "La Troncal", 
+    "provincia": "Cañar",
+    "lat": "-2.4278", 
+    "lng": "-79.3389" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Salinas", 
+    "provincia": "Guayas",
+    "lat": "-2.2083", 
+    "lng": "-80.9681" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Azogues", 
+    "provincia": "Cañar",
+    "lat": "-2.7333", 
+    "lng": "-78.8333" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Vinces", 
+    "provincia": "Los Ríos",
+    "lat": "-1.5500", 
+    "lng": "-79.7333" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "La Concordia", 
+    "provincia": "Esmeraldas",
+    "lat": "0.0069", 
+    "lng": "-79.3958" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Rosa Zarate", 
+    "provincia": "Esmeraldas",
+    "lat": "0.3272", 
+    "lng": "-79.4689" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Balzar", 
+    "provincia": "Guayas",
+    "lat": "-1.3600", 
+    "lng": "-79.9000" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Naranjito", 
+    "provincia": "Guayas",
+    "lat": "-2.1667", 
+    "lng": "-79.4653" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Naranjal", 
+    "provincia": "Guayas",
+    "lat": "-2.6736", 
+    "lng": "-79.6183" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Puyo", 
+    "provincia": "Pastaza",
+    "lat": "-1.4830", 
+    "lng": "-77.9870" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Guaranda", 
+    "provincia": "Bolívar",
+    "lat": "-1.6056", 
+    "lng": "-79.0031" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "La Maná", 
+    "provincia": "Cotopaxi",
+    "lat": "-0.9417", 
+    "lng": "-79.2347" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Tena", 
+    "provincia": "Napo",
+    "lat": "-0.9890", 
+    "lng": "-77.8159" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "San Lorenzo de Esmeraldas", 
+    "provincia": "Esmeraldas",
+    "lat": "1.2864", 
+    "lng": "-78.8353" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Catamayo", 
+    "provincia": "Loja",
+    "lat": "-3.9833", 
+    "lng": "-79.3500" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Pedernales", 
+    "provincia": "Manabí",
+    "lat": "0.0719", 
+    "lng": "-80.0508" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Atuntaqui", 
+    "provincia": "Imbabura",
+    "lat": "0.3325", 
+    "lng": "-78.2136" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Bahía de Caráquez", 
+    "provincia": "Manabí",
+    "lat": "-0.6000", 
+    "lng": "-80.4250" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Puerto Quito", 
+    "provincia": "Pichincha",
+    "lat": "0.1272", 
+    "lng": "-79.2531" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Pedro Carbo", 
+    "provincia": "Guayas",
+    "lat": "-1.8167", 
+    "lng": "-80.2333" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Macas", 
+    "provincia": "Morona-Santiago",
+    "lat": "-2.3000", 
+    "lng": "-78.1167" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Yaguachi Nuevo", 
+    "provincia": "Guayas",
+    "lat": "-2.1200", 
+    "lng": "-79.6900" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Valencia", 
+    "provincia": "Los Ríos",
+    "lat": "-0.9525", 
+    "lng": "-79.3531" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Piñas", 
+    "provincia": "El Oro",
+    "lat": "-3.6806", 
+    "lng": "-79.6806" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "San Gabriel", 
+    "provincia": "Carchi",
+    "lat": "0.6100", 
+    "lng": "-77.8400" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Atacames", 
+    "provincia": "Esmeraldas",
+    "lat": "0.8667", 
+    "lng": "-79.8333" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Alausí", 
+    "provincia": "Chimborazo",
+    "lat": "-2.1900", 
+    "lng": "-78.8500" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Lomas de Sargentillo", 
+    "provincia": "Guayas",
+    "lat": "-1.8833", 
+    "lng": "-80.0833" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Muisne", 
+    "provincia": "Esmeraldas",
+    "lat": "0.6100", 
+    "lng": "-80.0200" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Macará", 
+    "provincia": "Loja",
+    "lat": "-4.3833", 
+    "lng": "-79.9500" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Baños", 
+    "provincia": "Tungurahua",
+    "lat": "-1.3964", 
+    "lng": "-78.4247" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "San Miguel de Salcedo", 
+    "provincia": "Cotopaxi",
+    "lat": "-1.0500", 
+    "lng": "-78.5833" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Zamora", 
+    "provincia": "Zamora-Chinchipe",
+    "lat": "-4.0692", 
+    "lng": "-78.9567" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Puerto Ayora", 
+    "provincia": "Galápagos",
+    "lat": "-0.7444", 
+    "lng": "-90.3139" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Valdez", 
+    "provincia": "Esmeraldas",
+    "lat": "1.2671", 
+    "lng": "-78.9855" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Santa Cruz", 
+    "provincia": "Galápagos",
+    "lat": "-0.5333", 
+    "lng": "-90.3500" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Tosagua", 
+    "provincia": "Manabí",
+    "lat": "-0.7864", 
+    "lng": "-80.2342" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Píllaro", 
+    "provincia": "Tungurahua",
+    "lat": "-1.1667", 
+    "lng": "-78.5333" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Puerto Baquerizo Moreno", 
+    "provincia": "Galápagos",
+    "lat": "-0.9025", 
+    "lng": "-89.6092" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Pedro Vicente Maldonado", 
+    "provincia": "Pichincha",
+    "lat": "0.0853", 
+    "lng": "-79.0511" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Archidona", 
+    "provincia": "Napo",
+    "lat": "-0.9167", 
+    "lng": "-77.7833" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Llacao", 
+    "provincia": "Azuay",
+    "lat": "-2.8374", 
+    "lng": "-78.9419" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "Junín", 
+    "provincia": "Manabí",
+    "lat": "-0.9278", 
+    "lng": "-80.2058" 
+  }, 
+  {
+    "pais": "Ecuador", 
+    "nombre": "El Chaco", 
+    "provincia": "Napo",
+    "lat": "-0.3403", 
+    "lng": "-77.8089" 
+  }
+]

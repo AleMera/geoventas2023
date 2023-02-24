@@ -1,0 +1,47 @@
+.portada {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.portada img {
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+  scroll-snap-align: center;
+}
+
+img {
+  width: 450px;
+  height: 450px;
+}
+
+.detalles {
+  // position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #005722;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 120%;
+  font-style: italic;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+span {
+  color: #00cd4f;
+}

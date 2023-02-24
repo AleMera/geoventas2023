@@ -1,0 +1,4 @@
+- Poner buscador en el inicio :3
+- Poner mision, vision y objetivos de la empresa en el incio y otras cosas como metodos de pago
+- Calcular el total por vendedor en la pantalla del admin
+- Agregar paginas de nosotros, informacion de cursos e inicio

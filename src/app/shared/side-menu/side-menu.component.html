@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item" *ngFor="let item of menu">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="[item.ruta]">
+      <i class="material-icons">{{ item.icono }}</i>
+      {{ item.texto }}
+    </a>
+  </li>
+</ul>

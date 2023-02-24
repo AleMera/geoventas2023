@@ -1,0 +1,14 @@
+.card {
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  cursor: pointer;
+}
+
+.card:hover {
+  // transition: all 0.5s 0s ease, box-shadow 0.5s 0s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  // transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+  transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition-duration: 0.5s;
+}

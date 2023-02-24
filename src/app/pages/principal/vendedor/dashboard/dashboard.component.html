@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <select
+        #ciudad
+        class="custom-select"
+        id="inputGroupSelect02"
+        (change)="cambiarChart($event)"
+      >
+        <option [value]="" *ngFor="let titulo of titulosChart">
+          {{ titulo }}
+        </option>
+      </select>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <strong>Comision del vendedor: {{ comision | currency }}</strong>
+      </div>
+    </div>
+  </div>
+  <div class="chart">
+    <div>
+      <canvas
+        baseChart
+        class="chart"
+        [data]="pieChartData"
+        type="pie"
+        [options]="pieChartOptions"
+      >
+      </canvas>
+    </div>
+
+    <!-- <div class="col d-flex justify-content-between">
+      <canvas
+        baseChart
+        class="chart"
+        [data]="pieChartCursos"
+        [type]="pieChartType"
+        [options]="pieChartOptionsCursos"
+      >
+      </canvas>
+    </div> -->
+  </div>
+</div>
+
+<div class="cargando" *ngIf="cargando">
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>

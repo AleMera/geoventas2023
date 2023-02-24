@@ -1,0 +1,76 @@
+<div class="info-cursos">
+  <div class="imagen-infoCursos">
+    <div class="titulo">
+      <h1 class="text-center">
+        <span class="titulo-infoCursos">Información sobre los cursos</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center">
+          <i class="bi bi-patch-check"></i>
+        </h2>
+        <h3 class="text-center">Cursos certificados y avalados</h3>
+        <p>
+          Nuestra empresa, así como nuestras capacitaciones cuentan con aval y
+          registro del Ministerio de Trabajo (MDT), al finalizar el curso el estudiante
+          podrá validar y verificar el registro en el sitio web de dicha entidad.
+        </p>
+      </div>
+      <div class="col">
+        <h2 class="text-center">
+          <i class="bi bi-pc-display-horizontal"></i>
+          <i class="bi bi-people-fill"></i>
+        </h2>
+        <h3 class="text-center">Varias modalidades</h3>
+        <p>
+          Disponemos de modalidades adaptadas a la necesidad de nuestros estudiantes;
+          Presencial: realizado en todas las ciudades del país, cursos abiertos e incompany;
+          Online: curso en vivo a través de nuestras plataformas premium, interacción instantánea
+          entre instructor y estudiantes; Virtual: podrá tomar nuestros cursos grabados a través
+          de nuestra plataforma disponible las 24 horas, puedes estudiar de acuerdo a tu
+          disponibilidad de tiempo.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center">
+          <i class="bi bi-mortarboard"></i>
+        </h2>
+        <h3 class="text-center">Obtención de certificaciones</h3>
+        <p>
+          Nuestra cartera de servicios es amplia, contamos con certificaciones
+          nacionales e internacionales en temas de seguridad industrial y salud
+          ocupacional, al finalizar tu certificación contará con el registro en la
+          plataforma del Ministerio de Trabajo y visualización SENESCYT, con una
+          duración de 4 años.
+        </p>
+      </div>
+      <div class="col">
+        <h2 class="text-center">
+          <i class="bi bi-pencil"></i>
+        </h2>
+        <h3 class="text-center">Prácticos e interactivos</h3>
+        <p>
+          Nuestra metodología permite que los estudiantes y facilitadores creen un ambiente
+          amigable dentro del aula de clase, el desarrollo del curso se vuelve dinámico debido
+          a las prácticas que durante el mismo se ejecutan.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="text-center">
+      <i class="bi bi-card-checklist"></i>
+      <h3>Categorías</h3>
+    </div>
+    <div class="card-group">
+      <div class="card text-center" *ngFor="let cat of categorias" (click)="router.navigate(['/categoria', cat.id]);">
+        <img class="card-img-top" [src]="'assets/img/categorias/'+cat.nombre.split(' ')[0]+'.png'" [alt]="cat.nombre">
+      </div>
+    </div>
+  </div>
+</div>

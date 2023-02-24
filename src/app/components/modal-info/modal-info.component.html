@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h3 [class]="colorTexto">
+    <i class="material-icons">
+      {{ info.icono }}
+    </i>
+    {{ info.titulo }}
+  </h3>
+</div>
+<div class="modal-body">
+  <p>{{ info.mensaje }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="aceptar()">Aceptar</button>
+  <button type="button" class="btn btn-light" (click)="modal.dismissAll()" *ngIf="info.id || this.info.registro">Cancelar</button>
+</div>

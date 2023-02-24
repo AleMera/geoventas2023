@@ -1,0 +1,76 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="d-flex justify-content-center" *ngIf="cargando">
+  <div class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="contenido">
+  <div class="portada">
+    <img
+      [src]="curso.imgsUrl.length != 0 ? url : 'assets/img/cursos/1.jpg'"
+      alt=""
+      *ngFor="let url of curso.imgsUrl"
+    />
+  </div>
+  <div class="detalles">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="text-center">
+            <span class="material-icons"> schedule </span>
+            <p>Fecha: {{ curso.fecha }}</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="text-center">
+            <span class="material-icons"> hourglass_bottom </span>
+            <p>Duración: {{ curso.duracion }} Horas</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="text-center">
+            <span class="material-icons"> calendar_month </span>
+            <p>Horario: {{ curso.horario }}</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="text-center">
+            <span class="material-icons"> school </span>
+            <p>Modalidad: {{ curso.modalidad }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="informacion">
+    <div class="container">
+      <div class="row">
+        <div class="col-10">
+          <h1>{{ curso.nombre }}</h1>
+          <hr>
+          <h2>Justificación</h2>
+          <p> {{ curso.justificacion }} </p>
+          <hr />
+          <h2>Objetivos</h2>
+          <ul>
+            <li *ngFor="let objetivo of curso.objetivos">{{ objetivo }}</li>
+          </ul>
+          <hr />
+        </div>
+        <div class="col-2">
+          <div class="text-center">
+            <span class="material-icons"> attach_money </span>
+            <p>Costo: {{ curso.precio | currency }}</p>
+            <button type="button" class="btn btn-success" (click)="incribirse()">
+              <div class="spinner-border spinner-border-sm text-success" role="status" *ngIf="cargando">
+                <span class="sr-only">Loading...</span>
+              </div>
+              Inscribirse
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

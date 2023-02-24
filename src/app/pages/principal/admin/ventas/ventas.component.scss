@@ -1,0 +1,44 @@
+.justify-content-between {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.labelFiltros {
+  margin: 10px;
+}
+
+select, option {
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.selects {
+  margin-left: 5%;
+}
+
+.vendedores{
+  margin-left: -4%;
+  margin-bottom: 3%;
+}
+
+.custom-select {
+  width: auto;
+  margin-right: 5%;
+}
+
+.card-header {
+  margin-top: 0;
+}
+
+.comision {
+  cursor: pointer;
+}
+
+.card {
+  margin: 0;
+}

@@ -1,0 +1,40 @@
+<div class="cursos">
+  <div class="imagen-cursos">
+    <div class="titulo">
+      <h1 class="text-center">
+        <span class="titulo-cursos">Nuestros cursos</span>
+      </h1>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="text-center">
+      <h1>{{ idCategoria ? 'CURSOS DE ' + categoria : '' }}</h1>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <div [formGroup]="buscarForm" class="d-flex" (ngSubmit)="buscar()" *ngIf="!idCategoria">
+        <input formControlName="buscar" class="form-control me-2" type="search" placeholder="Buscar cursos" aria-label="Search">
+        <button type="submit" class="btn btn-outline-success" (click)="buscar()">
+          <i class="bi bi-search"></i>
+        </button>
+        <button type="button" class="btn btn-outline-danger" (click)="cancelarBusqueda()" *ngIf="buscando">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card border-danger" *ngIf="!cursos || cursos.length === 0">
+      <div class="text-center">
+        <div class="card-body">
+          <p class="card-text text-danger">No hay cursos disponibles</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-group">
+      <div class="row">
+        <div class="col col-4 animate__animated animate__slideInUp animate__faster" *ngFor="let curso of cursos">
+          <app-curso-card [curso]="curso"></app-curso-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

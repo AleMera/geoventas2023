@@ -1,0 +1,42 @@
+<div id="map"></div>
+<div class="container leyenda">
+  <div class="row">
+    <div class="col-2">
+      <span
+        class="material-icons"
+        style="
+          color: rgb(0, 144, 46);
+          font-size: 35px;
+          border-radius: 50%;
+          background-color: rgba(243, 243, 243, 0.479);
+        "
+        >pin_drop</span
+      >
+    </div>
+    <div class="col">
+      <small>Ciudades con 3 o más cursos vendidos</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <span
+        class="material-icons"
+        style="
+          color: rgb(0, 46, 144);
+          font-size: 35px;
+          border-radius: 50%;
+          background-color: rgba(243, 243, 243, 0.479);
+        "
+        >pin_drop</span
+      >
+    </div>
+    <div class="col">
+      <small>Ciudades con menos de 3 cursos vendidos</small>
+    </div>
+  </div>
+</div>
+<div class="cargando" *ngIf="cargando">
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
