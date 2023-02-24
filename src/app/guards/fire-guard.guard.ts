@@ -14,11 +14,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate() {
     return this.authSvc.getUid()
       .then(user => {
-        if (user!.uid === environment.uidAdmin) {
-          return true;
-        } else {
-          return false;
-        }
+        return (user!.uid === environment.uidAdmin);
       });
 
   }
@@ -26,11 +22,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivateChild() {
     return this.authSvc.getUid()
       .then(user => {
-        if (user!.uid === environment.uidAdmin) {
-          return true;
-        } else {
-          return false;
-        }
+        return (user!.uid === environment.uidAdmin);
       });
   }
 
