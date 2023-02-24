@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class SideMenuComponent implements OnInit {
       if (!resp) {
         return;
       }
-      if (resp.uid === 'sIjSGyg7Afa4TbIWdXxWMfYckVC2') {
+      if (resp.uid === environment.uidAdmin) {
         // Es admin
         return true;
       } else {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalEditarPerfilComponent } from 'src/app/components/modal-editar-perfil/modal-editar-perfil.component';
+import { environment } from 'src/environments/environment';
 
 import { AuthService } from '../../services/auth.service';
 import { FirestoreService } from '../../services/firestore.service';
@@ -50,12 +51,12 @@ export class NavBarComponent implements OnInit {
         this.usuario = user;
       }
       this.cargando = false;
-      
+
     });
   }
 
   esAdmin() {
-    return this.usuario.uid === 'sIjSGyg7Afa4TbIWdXxWMfYckVC2'
+    return this.usuario.uid === environment.uidAdmin;
   }
 
   editarPerfil() {

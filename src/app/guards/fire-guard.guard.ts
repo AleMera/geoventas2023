@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 import { AuthService } from '../services/auth.service';
 
@@ -13,7 +14,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate() {
     return this.authSvc.getUid()
       .then(user => {
-        if (user!.uid === 'sIjSGyg7Afa4TbIWdXxWMfYckVC2') {
+        if (user!.uid === environment.uidAdmin) {
           return true;
         } else {
           return false;
@@ -25,7 +26,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivateChild() {
     return this.authSvc.getUid()
       .then(user => {
-        if (user!.uid === 'sIjSGyg7Afa4TbIWdXxWMfYckVC2') {
+        if (user!.uid === environment.uidAdmin) {
           return true;
         } else {
           return false;
