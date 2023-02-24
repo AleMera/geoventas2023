@@ -12,7 +12,7 @@ export const environment = {
     messagingSenderId: "775742474237",
     appId: "1:775742474237:web:2143c7d1121bc190987b94"
   },
-  uidAdmin : '4IwmQcGTC1OO7EqkM7CvCGRSyVx1'
+  uidAdmin: '4IwmQcGTC1OO7EqkM7CvCGRSyVx1'
 };
 
 
