@@ -13,7 +13,8 @@
 
     <div class="d-flex justify-content-end">
       <div [formGroup]="buscarForm" class="d-flex" (ngSubmit)="buscar()" *ngIf="!idCategoria">
-        <input formControlName="buscar" class="form-control me-2" type="search" placeholder="Buscar cursos" aria-label="Search">
+        <input formControlName="buscar" class="form-control me-2" type="search" placeholder="Buscar cursos"
+          aria-label="Search">
         <button type="submit" class="btn btn-outline-success" (click)="buscar()">
           <i class="bi bi-search"></i>
         </button>

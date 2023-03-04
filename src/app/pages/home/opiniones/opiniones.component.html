@@ -1,0 +1,44 @@
+<div class="opiniones">
+    <div class="imagen-opiniones">
+        <div class="titulo">
+            <h1 class="text-center">
+                <span class="titulo-opiniones">Opinión de nuestros clientes</span>
+            </h1>
+        </div>
+    </div>
+    <div class="contenedor">
+        <div class="slider">
+            <input type="radio" name="slides" id="radio1" checked>
+            <input type="radio" name="slides" id="radio2">
+            <input type="radio" name="slides" id="radio3">
+            <input type="radio" name="slides" id="radio4">
+            <ul class="slides">
+                <li class="slide" *ngFor="let opinion of opiniones">
+                    <i class="bi bi-file-person-fill person"></i>
+                    <span class="autor">
+                        <b>{{ opinion.cliente }}</b>
+                    </span>
+                    <i class="bi bi-star-fill stars"></i>
+                    <i class="bi bi-star-fill stars"></i>
+                    <i class="bi bi-star-fill stars"></i>
+                    <i class="bi bi-star-fill stars"></i>
+                    <i class="bi bi-star-fill stars"></i>
+                    <p>
+                        <q>
+                            {{ opinion.opinion }}
+                        </q>
+                    </p>
+                    <span class="autor">
+                        {{ opinion.ciudad }}
+                    </span>
+                </li>
+            </ul>
+            <div class="navigation">
+                <label for="radio1" id="radioSelect1"></label>
+                <label for="radio2" id="radioSelect2"></label>
+                <label for="radio3" id="radioSelect3"></label>
+                <label for="radio4" id="radioSelect4"></label>
+            </div>
+        </div>
+    </div>
+</div>

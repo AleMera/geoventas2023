@@ -7,12 +7,15 @@ import { SharedModule } from '../../shared/shared.module';
 import { ComponentsModule } from '../../components/components.module';
 import { CursosModule } from './cursos/cursos.module';
 import { CursosCategoriasModule } from './cursos-categorias/cursos-categorias.module';
+import { OpinionesComponent } from './opiniones/opiniones.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
     InicioComponent,
     NosotrosComponent,
+    OpinionesComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +24,7 @@ import { CursosCategoriasModule } from './cursos-categorias/cursos-categorias.mo
     ComponentsModule,
     CursosModule,
     CursosCategoriasModule,
+    NgbCarouselModule
   ],
   exports: [
     NosotrosComponent,
