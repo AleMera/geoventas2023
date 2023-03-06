@@ -48,6 +48,7 @@ const routes: Routes = [
       onSameUrlNavigation: 'reload',
       scrollOffset: [0, 50],
       relativeLinkResolution: 'legacy',
+      useHash: true,
   })],
   exports: [RouterModule]
 })

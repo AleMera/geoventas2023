@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "geoventas-9f853"
+  },
+  "targets": {
+    "geoventas-9f853": {
+      "hosting": {
+        "geoVentas": [
+          "geoventas-9f853"
+        ]
+      }
+    }
+  }
+}
