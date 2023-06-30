@@ -361,11 +361,12 @@
       : 'modal-footer justify-content-center'
   "
 >
-  <button
+  <!-- <button
     type="button"
     class="btn btn-danger text-left"
     (click)="eliminar()"
     *ngIf="idCliente"
+    disabled
   >
     <span
       class="spinner-border spinner-border-sm"
@@ -375,7 +376,16 @@
     >
     </span>
     <i class="material-icons">delete</i>
-  </button>
+  </button> -->
+  <div class="d-flex justify-content-center">
+    <span
+      class="text-center text-warning"
+      title="No se puede eliminar un cliente que tenga cursos pendientes"
+      style="cursor: pointer;"
+    >
+      <i class="material-icons">warning</i>
+    </span>
+  </div>
   <button
     type="button"
     class="btn btn-success"
