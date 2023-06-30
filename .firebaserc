@@ -1,7 +1,4 @@
 {
-  "projects": {
-    "default": "geoventas-9f853"
-  },
   "targets": {
     "geoventas-9f853": {
       "hosting": {
@@ -10,5 +7,8 @@
         ]
       }
     }
+  },
+  "projects": {
+    "default": "geoventas-9f853"
   }
 }
