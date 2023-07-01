@@ -146,6 +146,7 @@ export class ModalFormClienteComponent implements OnInit {
       }
       this.cargando = false;
     });
+
   }
 
   private ordenarAlfabeticamente(a: any, b: any) {
@@ -163,6 +164,8 @@ export class ModalFormClienteComponent implements OnInit {
     this.firestoreSvc.getDoc('Ventas', this.idVenta).subscribe((venta: any) => {
       this.firestoreSvc.getDoc('Clientes', this.idCliente).subscribe((cliente: any) => {
         this.cliente = cliente;
+        console.log(this.cliente);
+
         if (!cliente) return;
         if (!cliente.imgCedula)
           this.clienteForm.controls['imgCedula'].setValidators([Validators.required]);
@@ -185,10 +188,10 @@ export class ModalFormClienteComponent implements OnInit {
             precio: venta.precio,
             estadoPago: venta.pagado ? 'Pagado' : 'Pendiente',
           });
-          
+
           this.urlCedula = this.cliente.imgCedula ? this.cliente.imgCedula : '';
-          this.urlCertTrabajo = this.cliente.certTrabajo ? this.cliente.certTrabajo : '';
-          this.urlCertCapacitacion = this.cliente.certCapacitacion ? this.cliente.certCapacitacion : '';
+          this.urlCertTrabajo = this.cliente.imgCertTrabajo ? this.cliente.imgCertTrabajo : '';
+          this.urlCertCapacitacion = this.cliente.imgCertCapacitacion ? this.cliente.imgCertCapacitacion : '';
           this.cargando = false;
         });
       });

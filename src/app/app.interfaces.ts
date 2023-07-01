@@ -9,8 +9,8 @@ export interface Cliente {
     telefono: string;
     direccion: string;
     imgCedula?: string;
-    certTrabajo?: string;
-    certCapacitacion?: string;
+    imgcertTrabajo?: string;
+    imgcertCapacitacion?: string;
 }
 
 // export interface Curso {
@@ -38,7 +38,7 @@ export interface Ciudad {
     pais?: string;
     lat?: number;
     lng?: number;
-}   
+}
 
 export interface Info {
     tipo: string;
