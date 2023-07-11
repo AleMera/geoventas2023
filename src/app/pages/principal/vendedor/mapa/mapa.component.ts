@@ -66,7 +66,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
                 });
               });
               const ciudadVenta = cursosPorCiudad.filter((venta: any) => venta.ciudad === ciudad.nombre);
-              
+
               let color = ciudadVenta.length >= 3 ? 'rgb(0, 144, 46)' : 'rgb(0, 46, 144)';
               const icon = {
                 icon: L.divIcon({
@@ -102,7 +102,6 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.map.remove();
-
   }
 
 }

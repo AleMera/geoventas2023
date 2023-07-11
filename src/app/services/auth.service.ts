@@ -36,7 +36,6 @@ export class AuthService {
     return this.auth.signOut();
   }
 
-  //TODO: Crear el metodo para recuperar la contraseña y para modificar información del usuario
 
   getUserInfo() {
     return this.auth.authState;

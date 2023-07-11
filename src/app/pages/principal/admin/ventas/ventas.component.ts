@@ -71,9 +71,12 @@ export class VentasComponent implements OnInit {
               this.ventas = ventas.map((venta: any) => {
                 venta.cliente = `${clientes.find((cliente: any) => cliente.id === venta.idCliente).nombre} ${clientes.find((cliente: any) => cliente.id === venta.idCliente).apellido}`;
                 venta.ciudad = this.ciudades.find((ciudad: any) => ciudad.id === venta.idCiudad)?.nombre;
-                venta.vendedor = `${vendedores.find((vendedor: any) => vendedor.idCiudad.find((idCiudad: any) => idCiudad === venta.idCiudad))?.nombre} ${vendedores.find((vendedor: any) => vendedor.idCiudad.find((idCiudad: any) => idCiudad === venta.idCiudad))?.apellido}`;
+                const nombreVendedor = vendedores.find((vendedor: any) => vendedor.idCiudad.find((idCiudad: any) => idCiudad === venta.idCiudad))?.nombre;
+                const apeVendedor = vendedores.find((vendedor: any) => vendedor.idCiudad.find((idCiudad: any) => idCiudad === venta.idCiudad))?.apellido;
+                venta.vendedor = (nombreVendedor != undefined && apeVendedor != undefined) ? `${nombreVendedor} ${apeVendedor}` : 'Sin vendedor';
                 venta.curso = cursos.find((curso: any) => curso.id === venta.idCurso).nombre;
                 venta.fecha = venta.fecha.toDate();
+                console.log(venta.vendedor);
                 return venta;
               });
               this.auxVentas = this.ventas;
@@ -163,7 +166,7 @@ export class VentasComponent implements OnInit {
   }
 
   guardarComision() {
-    
+
     if (!this.ventaForm.controls['comision'].value) {
       this.editarComision = false;
       return;

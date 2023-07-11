@@ -40,7 +40,7 @@ export class ClientesComponent implements OnInit, OnDestroy {
       language: {
         url: '//cdn.datatables.net/plug-ins/1.10.22/i18n/Spanish.json'
       },
-      lengthMenu: [10, 25, 50, 100],
+      lengthMenu: [2, 10, 25, 50, 100],
       responsive: false,
       processing: true,
       scrollY: '400px',
